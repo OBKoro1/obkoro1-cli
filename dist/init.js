@@ -35,33 +35,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Github: https://github.com/OBKoro1
  * Date: 2019-08-09 14:08:37
  * LastEditors: OBKoro1
- * LastEditTime: 2019-08-12 15:02:31
+ * LastEditTime: 2019-08-12 17:12:03
  * Description: 模板 init 
  */
 let init = async projectName => {
     //项目不存在
     if (!_fs2.default.existsSync(projectName)) {
         //命令行交互
+        // 更多示例：https://blog.csdn.net/qq_26733915/article/details/80461257
         _inquirer2.default.prompt([{
             type: 'checkbox',
-            message: '这是message',
-            name: '名字',
-            choices: [new _inquirer2.default.Separator(' = 可以自定义分隔符 = '), // 可以自定义分隔符
+            message: '这是message', // title
+            name: 'checkboxList', // key
+            choices: [new _inquirer2.default.Separator(' = 自定义分隔符 = '), // 可以自定义分隔符
             {
-                name: 'Mozzarella',
-                checked: true // 表示默认选中项
+                name: 'Router', // 选项
+                checked: true // 默认选中
             }, {
-                name: 'Cheddar'
+                name: 'Vuex'
             }, {
-                name: 'Parmesan'
-            }, new _inquirer2.default.Separator(' = The usual ='), {
-                name: 'Mushroom'
+                name: 'TypeScript'
+            }, new _inquirer2.default.Separator(' = 又是一个分隔符 ='), {
+                name: 'axios'
             }, {
-                name: 'Tomato',
-                disabled: 'out of stock' // 可以设禁用
+                name: 'ESLint'
+            }, {
+                name: 'CSS预处理器' // 选择css预处理器
             }],
-            validate: function (answer) {
-                console.log('answer222', answer);
+            validate(answer) {
                 if (answer.length < 1) {
                     return '你必须至少选择一个.';
                 }
@@ -69,22 +70,19 @@ let init = async projectName => {
             }
         }, {
             type: 'list',
-            name: 'theme', // answer的key
-            message: 'What do you want to do?',
-            choices: ['Order a pizza', 'Make a reservation', new _inquirer2.default.Separator('哈哈哈哈。。。。。'), // choices里可以有分隔符
-            'Ask for opening hours', {
-                name: 'Contact support', // 可以是对象，name就是显示的字符串
-                disabled: 'Unavailable at this time'
-            }, 'Talk to the receptionist']
+            name: 'cssValue',
+            message: '你选择哪个Css预处理器？',
+            choices: [new _inquirer2.default.Separator('在你选了CSS预处理器才有该选项'), 'SCSS/SASS', 'LESS'],
+            // 当选了某个选项后 才显示这个
+            when: answer => {
+                let checkboxList = answer.checkboxList;
+                return checkboxList.includes('CSS预处理器');
+            }
         }, {
             type: 'rawlist',
-            name: 'theme2', // answer的key
-            message: 'What do you want to do?',
-            choices: ['Order a pizza', 'Make a reservation', new _inquirer2.default.Separator('啦啦啦啦...'), // choices里可以有分隔符
-            'Ask for opening hours', {
-                name: 'Contact support', // 可以是对象，name就是显示的字符串
-                disabled: 'Unavailable at this time'
-            }, 'Talk to the receptionist']
+            name: 'eslintValue', // answer的key
+            message: '选择Eslint代码验证规则',
+            choices: ['ESLint + Airbnb config', 'ESLint + Standard config', 'ESLint + Prettier']
         }, {
             name: 'description',
             message: '请输入项目描述: '

@@ -1,7 +1,7 @@
 {
     "name": "koro-cli",
-    "version": "1.0.2",
-    "description": "脚手架",
+    "version": "1.0.0",
+    "description": "一个类似vue-cli的脚手架,用于学习脚手架开发理念：下载模板,通过命令行交互, 处理下载的模板",
     "main": "index.js",
     "bin": {
         "koro": "./bin/www"
@@ -11,11 +11,34 @@
         "watch": "npm run compile -- --watch",
         "postinstall": "koro config set"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OBKoro1/obkoro1-cli"
+    },
+    "bugs": {
+        "url": "https://github.com/OBKoro1/obkoro1-cli/issues",
+        "email": "obkoro1@foxmail.com"
+    },
+    "author": {
+        "name": "OBKoro1",
+        "email": "obkoro1@foxmail.com",
+        "url": "http://obkoro1.com/web_accumulate/"
+    },
+    "keywords": [
+        "脚手架学习",
+        "脚手架开发",
+        "脚手架",
+        "vue-cli 思想",
+        "vue-cli 理念",
+        "vue-cli 开发",
+        "vue-cli",
+        "koro-cli",
+        "koro",
+        "obkoro1",
+        "OBKoro1"
+    ],
+    "license": "MIT",
     "dependencies": {
-        "axios": "^0.19.0",
         "babel-cli": "^6.26.0",
         "babel-env": "^2.4.1",
         "chalk": "^2.4.2",

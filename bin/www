@@ -1,0 +1,3 @@
+#! /usr/bin/env node
+require('../dist/main.js');
+// 命令行注册入口 更改package即可更改命令名称

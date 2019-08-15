@@ -29,7 +29,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * Github: https://github.com/OBKoro1
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * Date: 2019-08-09 14:08:37
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * LastEditors: OBKoro1
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * LastEditTime: 2019-08-15 10:51:37
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * LastEditTime: 2019-08-15 17:05:19
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * Description: 模板 init 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
 // loading 动画
@@ -102,19 +102,11 @@ let init = (() => {
                     loading.start();
                     (0, _get.downloadLocal)(projectName).then(function (res) {
                         // 下载完成 do something
+                        const fileName = `${projectName}/answer.txt`;
+                        const answerString = JSON.stringify(answer);
+                        _fs2.default.writeFileSync(fileName, `演示文件，根据用户选项，使用node想做什么都可以，天空才是你的极限！\n${answerString}`, 'utf-8');
+                        // 下载完成
                         loading.succeed();
-                        // const fileName = `${projectName}/package.json`;
-                        // // 修改package.json
-                        // if (fs.existsSync(fileName)) {
-                        //     const data = fs.readFileSync(fileName).toString();
-                        //     let json = JSON.parse(data);
-                        //     json.name = projectName;
-                        //     json.author = answer.author;
-                        //     json.description = answer.description;
-                        //     //修改项目文件夹中 package.json 文件
-                        //     fs.writeFileSync(fileName, JSON.stringify(json, null, '\t'), 'utf-8');
-                        //     console.log(symbol.success, chalk.green('项目初始化完成!'));
-                        // }
                     }, function (err) {
                         // console.log('报错：', err)
                         loading.fail();

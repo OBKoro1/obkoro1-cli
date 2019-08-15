@@ -3,7 +3,7 @@
  * Github: https://github.com/OBKoro1
  * Date: 2019-08-09 14:08:37
  * LastEditors: OBKoro1
- * LastEditTime: 2019-08-12 15:00:01
+ * LastEditTime: 2019-08-15 16:32:54
  * Description: 从远程下载模板
  */
 // download-git-repo 支持从 Github、Gitlab 下载远程仓库到本地
@@ -17,7 +17,7 @@ export const downloadLocal = async (projectName) => {
     // Bitbucket - bitbucket: owner / name
     let config = await getAll();
     let repoSite = `${config.registry}/${config.templateName}`;
-    console.log('repoSite',repoSite,projectName)
+    console.log('仓库地址、项目名', repoSite, projectName)
     return new Promise((resolve, reject) => {
         // downloadGit 下载命令行
         downloadGit(repoSite, projectName, (err) => {

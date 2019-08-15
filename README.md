@@ -61,7 +61,7 @@ mac 环境下要使用`sudo npm link`才能链接全局环境。
 
 ### 下载模板：
 
-本项目是一个学习项目, 项目内置模板为一个只有`readme`的[仓库](https://github.com/OBKoro1/Brush_algorithm),并且不会有任何操作。
+本项目是一个学习项目, 项目内置模板为一个只有`readme`的[仓库](https://github.com/OBKoro1/Brush_algorithm),然后只是简单的把**用户选项**放到新创建的：`answer.txt`文件中。
 
 ```js
 koro init testName // 下载模板到testName文件夹

@@ -3,7 +3,24 @@
 
 本项目基于：[eos-cli](https://github.com/YvetteLau/Blog/tree/master/eos-cli)
 
-## 启动项目
+### example:
+
+![](./example.gif)
+
+## 全局安装：
+
+```js
+npm install koro-cli -g
+```
+
+mac环境下要加`sudo`。
+
+### 演示
+
+
+## 本地调试
+
+### 下载项目。
 
 ### 安装依赖
 

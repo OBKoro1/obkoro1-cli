@@ -35,7 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Github: https://github.com/OBKoro1
  * Date: 2019-08-09 14:08:37
  * LastEditors: OBKoro1
- * LastEditTime: 2019-08-12 17:12:03
+ * LastEditTime: 2019-08-15 10:51:37
  * Description: 模板 init 
  */
 let init = async projectName => {
@@ -116,8 +116,8 @@ let init = async projectName => {
             });
         });
     } else {
-        //项目已经存在
-        console.log(_logSymbols2.default.error, _chalk2.default.red('The project already exists'));
+        // 项目已经存在
+        console.log(_logSymbols2.default.error, _chalk2.default.red('项目已经存在'));
     }
 }; // 向用户提出问题，接收用户的输入并作出相应的处理
 

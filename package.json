@@ -1,6 +1,6 @@
 {
     "name": "koro-cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "一个类似vue-cli的脚手架,用于学习脚手架开发理念：下载模板,通过命令行交互, 处理下载的模板",
     "main": "index.js",
     "bin": {

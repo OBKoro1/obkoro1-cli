@@ -3,7 +3,7 @@
  * Github: https://github.com/OBKoro1
  * Date: 2019-08-09 14:08:37
  * LastEditors: OBKoro1
- * LastEditTime: 2019-08-12 17:12:03
+ * LastEditTime: 2019-08-15 10:51:37
  * Description: 模板 init 
  */
 import { downloadLocal } from './utils/get';
@@ -118,8 +118,8 @@ let init = async (projectName) => {
             });
         });
     } else {
-        //项目已经存在
-        console.log(symbol.error, chalk.red('The project already exists'));
+        // 项目已经存在
+        console.log(symbol.error, chalk.red('项目已经存在'));
     }
 }
 

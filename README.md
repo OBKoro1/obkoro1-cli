@@ -70,8 +70,8 @@ koro init testName // 下载模板到testName文件夹
 #### 修改下载仓库：
 
 ```js
-eos config set registry OBKoro1 // 修改用户
-eos config set templateName codeBlack // 修改仓库名
+koro config set registry OBKoro1 // 修改用户
+koro config set templateName codeBlack // 修改仓库名
 ```
 
 #### 自定义模板
